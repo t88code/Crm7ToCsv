@@ -1,0 +1,18 @@
+[ CONFIG ]2023/02/15 02:42:39 config.go:50: Config:>Failed to parse gcfg data: open ./config.ini: no such file or directory
+[ CONFIG ]2023/02/15 02:45:38 config.go:50: Config:>Failed to parse gcfg data: warnings:
+can't store data at section "FOODTYPE"
+can't store data at section "FOODTYPE"
+can't store data at section "FOODTYPE"
+can't store data at section "FOODTYPE"
+can't store data at section "FOODTYPE"
+can't store data at section "FOODTYPE"
+can't store data at section "FOODTYPE"
+can't store data at section "FOODTYPE"
+can't store data at section "FOODTYPE"
+can't store data at section "FOODTYPE"
+can't store data at section "FOODTYPE"
+can't store data at section "FOODTYPE"
+can't store data at section "FOODTYPE"
+can't store data at section "FOODTYPE"
+can't store data at section "FOODTYPE"
+can't store data at section "FOODTYPE"
