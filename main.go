@@ -75,20 +75,25 @@ SELECT
 	defer func(db *sqlx.DB) {
 		err := db.Close()
 		if err != nil {
-			logger.Fatalf("dbCrm7: failed close sqlx.Connect, err: %v", err) // todo??
+			logger.Fatalf("dbCrm7: failed close sqlx.Connect, err: %v", err)
 		}
 	}(dbCrm7)
 
 	check.Check(dbCrm7, true)
 
-	date, err := time.Parse("2006/01/02", cfg.EXPORT.Date)
-	if err != nil {
-		logger.Fatalf("Ошибка при в параметре Date; %v", err)
+	var date time.Time
+	if cfg.EXPORT.Date == "" {
+		date = time.Now().Add(-24 * time.Hour)
+	} else {
+		date, err = time.Parse("2006/01/02", cfg.EXPORT.Date)
+		if err != nil {
+			logger.Fatalf("Ошибка при в параметре Date; %v", err)
+		}
 	}
 
 	y, m, d := date.Date()
 	timeBefore := fmt.Sprintf("%d%02d%02d", y, m, d)
-	fileCsvName := fmt.Sprintf("KGVD_%02d%02d%d.CSV", d, m, y)
+	fileCsvName := fmt.Sprintf("KGVD_%02d%02d%d.csv", d, m, y)
 
 	y, m, d = date.Add(24 * time.Hour).Date()
 	timeAfter := fmt.Sprintf("%d%02d%02d", y, m, d)
