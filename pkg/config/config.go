@@ -16,12 +16,15 @@ type Config struct {
 		ConnectionString      string
 		AccountTypeID         int
 		ContactTypeIDFoodType int
+		ContactTypeIDPpn      int
 		QualifierIgnore       string
 	}
 	EXPORT struct {
 		ExportFolder string
 		ExportDays   int
 		Date         string
+		Verify       bool
+		Report       bool
 	}
 }
 
@@ -45,6 +48,7 @@ func GetConfig() *Config {
 		//logger.Println("Read application configurations")
 
 		// Read you config
+
 		err = gcfg.ReadFileInto(&cfg, "./config.ini")
 		if err != nil {
 			logger.Fatalf("Config:>Failed to parse gcfg data: %s", err)
