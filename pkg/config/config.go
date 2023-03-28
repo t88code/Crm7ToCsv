@@ -20,11 +20,19 @@ type Config struct {
 		QualifierIgnore       string
 	}
 	EXPORT struct {
-		ExportFolder string
-		ExportDays   int
-		Date         string
-		Verify       bool
-		Report       bool
+		Path       string
+		ExportDays int
+		Date       string
+		Mode       int
+	}
+	VERIFY struct {
+		Verify           bool
+		VeryfyErrorsSkip bool
+		Path             string
+	}
+	REPORT struct {
+		Report bool
+		Path   string
 	}
 }
 
