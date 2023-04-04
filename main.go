@@ -46,6 +46,7 @@ var date time.Time
 func main() {
 
 	logger := logging.GetLogger()
+	logger.Debug("Import CSV to CRM5/CRM7. Version 1.0")
 	logger.Debug("ImportCrm7ToCsv start")
 	defer logger.Debug("ImportCrm7ToCsv stop")
 
